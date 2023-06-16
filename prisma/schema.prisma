@@ -1,0 +1,19 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = "postgresql://postgres:umurungi@localhost:5432/develope"
+}
+
+model ToDo {
+  id       Int     @id @default(autoincrement())
+  description  String
+  title   String
+  complete Boolean
+  createdAt     DateTime @default(now())
+}
